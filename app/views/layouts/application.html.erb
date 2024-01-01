@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Q&A</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+
+      .header, .navigation, .content, .footer {
+        padding: 20px;
+      }
+
+      .header {
+        background-color: #f0f0f0;
+      }
+
+      .navigation {
+        background-color: #e0e0e0;
+      }
+
+      .content {
+        background-color: #ffffff;
+      }
+
+      .footer {
+        background-color: #d0d0d0;
+      }
+
+      .notice, .alert {
+        margin: 0;
+      }
+
+      .alert {
+        color: red;
+      }
+    </style>
+ </head>
+
+ <body>
+   
+    <%= render 'shared/flash' %>
+    <div class="navigation">
+      <%= render 'shared/navigation' %>
+    </div>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+
+    <div class="footer">
+      <%= render 'shared/footer' %>
+    </div>
+ </body>
+</html>

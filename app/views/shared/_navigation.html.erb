@@ -1,0 +1,31 @@
+<center>
+
+ <h1>
+
+    <%= link_to_unless_current Rails.application.class.module_parent.name, root_path %>
+
+ </h1>
+
+ <%= link_to_unless_current 'Inboxes', inboxes_path %>
+
+ <%= link_to_unless_current 'New Inbox', new_inbox_path %>
+
+
+ <% unless signed_in? %>
+
+    <%= link_to "Log in", new_user_session_path %>
+
+    <%= link_to "Register", new_user_registration_path %>
+
+ <% else %>
+
+    <%= link_to current_user.email, edit_user_registration_path %>
+
+    <%= button_to "log out", destroy_user_session_path, method: :delete, data: { turbo: "false " } %>
+
+ <% end %>
+
+
+</center>
+
+<hr>

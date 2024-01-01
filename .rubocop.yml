@@ -1,0 +1,16 @@
+require: rubocop-rails
+AllCops:
+  Exclude:
+  - 'test/**/*'
+  - 'db/**/*'
+  - 'bin/*'
+  - 'config/**/*'
+  - 'config.ru'
+  - 'Gemfile'
+  - 'Rakefile'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
